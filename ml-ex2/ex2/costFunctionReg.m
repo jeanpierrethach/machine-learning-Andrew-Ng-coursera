@@ -26,16 +26,16 @@ rp = (1-y)' * log(1-h);
 
 theta_zero = theta;
 
-# indexed from 1 to m and skipping theta zero (index = 1)
+% indexed from 1 to m and skipping theta zero (index = 1)
 theta_zero(1) = 0;
 
 lambda_J_cost = (lambda / (2*m)) * sum(theta_zero .^ 2);
 lambda_grad_cost = lambda / m * theta_zero;
 
-% cost: J
+% cost: J with regularization
 J = (1/m) * (lp - rp) + lambda_J_cost;
 
-% gradient: compute as the derivative of the cost function
+% gradient: compute as the derivative of the cost function with regularization
 grad = (1/m) * X' * (h-y) + lambda_grad_cost;
 
 
