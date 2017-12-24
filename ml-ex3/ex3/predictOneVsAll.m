@@ -30,7 +30,10 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+% matrix of examples and num_labels (where each num_labels has a corresponding probablity for each sample)
 htheta = X * all_theta';
+
+% returns the highest value and index for each row
 [pval, p] = max(htheta, [], 2);
 
 
