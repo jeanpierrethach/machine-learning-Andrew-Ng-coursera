@@ -62,7 +62,7 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
-% Foward Propagation
+% Feedforward Propagation
 a1 = [ones(m,1) X];
 z2 = a1 * Theta1';
 a2 = sigmoid(z2);
