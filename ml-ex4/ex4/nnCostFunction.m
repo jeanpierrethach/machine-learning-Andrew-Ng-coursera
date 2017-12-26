@@ -84,7 +84,7 @@ J = J + regularization;
 
 % Backpropagation
 delta_3 = a3 - y;
-delta_2 = (delta_3*Theta2).* [ones(size(z2,1),1) sigmoidGradient(z2)];
+delta_2 = (delta_3*Theta2) .* [ones(size(z2,1),1) sigmoidGradient(z2)];
 
 D1 = delta_2(:,2:end)' * a1;
 D2 = delta_3' * a2;
@@ -92,7 +92,7 @@ D2 = delta_3' * a2;
 Theta1_grad = Theta1_grad + (1 / m) * D1;
 Theta2_grad = Theta2_grad + (1 / m) * D2;
 
-# Regularization of the gradient
+% Regularization of the gradient
 Theta1_grad(:,2:end) = Theta1_grad(:,2:end) + (lambda / m) * (Theta1(:,2:end));
 Theta2_grad(:,2:end) = Theta2_grad(:,2:end) + (lambda / m) * (Theta2(:,2:end));
 
